@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculate the volume of a sphere</title>
+        <style>
+            body {
+                margin: 30px;
+            }
+            form, div {
+                text-align: center;
+            }
+            select {
+                width: 150px;
+                height: 30px;
+                padding: 5px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #558adf;
+            }
+            form input[type="button"] {
+                background-color: #558adf;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            form input[type="button"]:hover {
+                background-color: #3e7db3;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Input radius value and get the volume of a sphere</div>
+        <form>
+            <label>Radius:</label>
+            <input type="text" id="radius" placeholder="Enter the radius of the sphere">
+            <input type="button" value="Calculate the volume" onclick="calculateVolume()">
+        </form>
+        <div id="output"></div>
+        <script>
+            function calculateVolume() {
+                var radius = document.getElementById("radius").value;
+                var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+                document.getElementById("output").innerHTML = "Radius: " + radius + "<br> Volume: " + volume.toFixed(2);
+            }
+        </script>
+    </body>
+</html>
