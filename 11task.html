@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Image</title>
+        <style>
+            #image-container {
+                text-align: center;
+            }
+
+            button {
+                    background-color: #558adf;
+                    color: white;
+                    padding: 14px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #3e7db3;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="image-container"></div>
+        <button onclick="displayRandomImage()">Display Random Image</button>
+        <script>
+            var images = [
+                {
+                    url: "https://i.pinimg.com/736x/95/f0/60/95f06023d026816e54870528490ce8e8.jpg",
+                    width: "500",
+                    height: "500"
+                },
+                {
+                    url: "https://miro.medium.com/max/439/1*ZYyXvhYDGvELzYoXYpPLMg.png",
+                    width: "500",
+                    height: "500"
+                },
+                {
+                    url: "https://bvker.com/wp-content/uploads/2020/03/music-producers-at-music-festivals-meme.jpg",
+                    width: "500",
+                    height: "500"
+                }
+            ];
+
+            function displayRandomImage() {
+                var randomIndex = Math.floor(Math.random() * images.length);
+                var image = images[randomIndex];
+                var imageContainer = document.getElementById("image-container");
+                var img = document.createElement("img");
+                img.src = image.url;
+                img.width = image.width;
+                img.height = image.height;
+                imageContainer.innerHTML = "";
+                imageContainer.appendChild(img);
+            }
+        </script>
+    </body>
+</html>
