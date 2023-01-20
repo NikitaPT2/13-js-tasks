@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Count and display items of a dropdown list</title>
+        <style>
+            body {
+                margin: 30px;
+            }
+            form {
+                text-align: center;
+            }
+            select {
+                width: 150px;
+                height: 30px;
+                padding: 5px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #558adf;
+            }
+            form input[type="button"] {
+                background-color: #558adf;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            form input[type="button"]:hover {
+                background-color: #3e7db3;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            Select your favorite Color:
+            <select id="mySelect">
+            <option>Red</option>
+            <option>Green</option>
+            <option>Blue</option>
+            <option>White</option>
+            </select>
+            <input type="button" onclick="getOptions()" value="Count and Output all items" />
+        </form>
+        <script>
+        function getOptions() {
+            var select = document.getElementById("mySelect");
+            var options = select.options;
+            var count = options.length;
+            var message = "Total number of items: " + count + "\n";
+            for (var i = 0; i < count; i++) {
+            message += options[i].value + "\n";
+            }
+            alert(message);
+        }
+        </script>
+    </body>
+</html>
