@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>JavaScript - Get Window Size</title>
+        <script>
+            window.onresize = function () {
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            document.getElementById("width").innerHTML = width;
+            document.getElementById("height").innerHTML = height;
+            };
+        </script>
+    </head>
+    <body>
+        <div>Width: <span id="width"></span></div>
+        <div>Height: <span id="height"></span></div>
+    </body>
+</html>
