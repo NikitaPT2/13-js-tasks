@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Change the content of a cell</title>
+        <style>
+            body {
+                margin: 30px;
+            }
+            table {
+                border-collapse: collapse;
+                width: 50%;
+                margin: 0 auto;
+            }
+            form {
+                text-align: center;
+            }
+            th,td {
+                border: 1px solid #558adf;
+                padding: 8px;
+                text-align: center;
+            }
+            th {
+                background-color: #558adf;
+                color: white;
+                font-weight: bold;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            form input[type="button"] {
+                background-color: #558adf;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            form input[type="button"]:hover {
+                background-color: #3e7db3;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="myTable"></table>
+        <form>
+            <input type="button" onclick="createTable()" value="Create the table" />
+        </form>
+        <script>
+            function createTable() {
+            var row = prompt("Enter the number of rows:");
+            var col = prompt("Enter the number of columns:");
+            var table = document.getElementById("myTable");
+            var tableHead = "";
+            table.innerHTML = tableHead;
+
+            for (var i = 1; i <= row; i++) {
+            var tr = document.createElement("tr");
+            for (var j = 1; j <= col; j++) {
+            var td = document.createElement("td");
+            td.innerHTML = "Row-" + i + " Column-" + j;
+            tr.appendChild(td);
+            }
+            table.appendChild(tr);
+            }
+            }
+        </script>
+    </body>
+</html>
