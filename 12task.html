@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Highlight Bold Words</title>
+        <style>
+        #text {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        #text span {
+            font-weight: normal;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #text span.bold {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #text span.highlight {
+            background-color: #558adf;
+        }
+        </style>
+    </head>
+    <body>
+        <p id="text">
+        We have just started this section for the <span class="bold">users</span> (beginner to intermediate) who want to work with various JavaScript <span class="bold">problems</span> and write scripts to test their JavaScript <span class="bold">skill</span>.
+        </p>
+        <script>
+            var boldWords = document.querySelectorAll("#text span.bold");
+            for (var i = 0; i < boldWords.length; i++) {
+            boldWords[i].addEventListener("mouseover", function () {
+                this.classList.add("highlight");
+            });
+            boldWords[i].addEventListener("mouseout", function () {
+                this.classList.remove("highlight");
+            });
+            }
+        </script>
+    </body>
+</html>
